@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#424242"
+    tools:context=".EditTaskActivity"
+    android:textDirection="rtl"
+    android:layoutDirection="rtl">
+
+    <android.support.v7.widget.Toolbar
+        android:layoutDirection="rtl"
+        android:id="@+id/toolbar_edi_task_activity"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#333333"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    </android.support.v7.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/EdtTitleTask"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_edittext"
+        android:ems="10"
+        android:hint="@string/title_task"
+        android:inputType="textMultiLine"
+        android:lineSpacingExtra="8dp"
+        android:maxLength="38"
+        android:padding="15dp"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_edi_task_activity" />
+
+    <EditText
+
+        android:id="@+id/edtStringTask"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/background_edittext"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="توضیحات بیشتر ..."
+        android:inputType="textMultiLine"
+        android:lineSpacingExtra="8dp"
+        android:textSize="19sp"
+        android:padding="15dp"
+        android:textDirection="rtl"
+        app:layout_constraintBottom_toTopOf="@+id/delete_task_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EdtTitleTask" />
+
+    <Button
+        android:id="@+id/edit_task_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/background_button"
+        android:padding="15dp"
+        android:text="ویرایش تسک"
+        android:textSize="18sp"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/delete_task_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/background_button"
+        android:padding="15dp"
+        android:text="حذف تسک"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/edit_task_btn" />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/background_gradient">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_main_activity"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorPrimary"
+        app:theme = "@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layoutDirection="rtl">
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewDateList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_main_activity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.50"
+                    android:id="@+id/img_coffee"
+                    android:src="@drawable/coffee"
+                    app:riv_corner_radius="25dp"
+                    app:riv_border_width="2dp"
+                    app:riv_border_color="#333333"
+                    app:riv_mutate_background="true"
+                    tools:ignore="NestedWeights" />
+                <TextView
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="آلارم قهوه"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.200"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.50"
+                    android:id="@+id/img_tea"
+                    android:src="@drawable/tea"
+                    app:riv_corner_radius="25dp"
+                    app:riv_border_width="2dp"
+                    app:riv_border_color="#333333"
+                    app:riv_mutate_background="true"
+                    />
+                <TextView
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="آلارم چای"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.20"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.50"
+                    android:id="@+id/img_sleep"
+                    android:src="@drawable/sleep"
+                    app:riv_corner_radius="25dp"
+                    app:riv_border_width="2dp"
+                    app:riv_border_color="#333333"
+                    app:riv_mutate_background="true"
+                    />
+                <TextView
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="آلارم خواب"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.20"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp">
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.50"
+                    android:id="@+id/img_medicine"
+                    android:src="@drawable/medicine"
+                    app:riv_corner_radius="25dp"
+                    app:riv_border_width="2dp"
+                    app:riv_border_color="#333333"
+                    app:riv_mutate_background="true"
+                    />
+                <TextView
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="زمانبندی دارو"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.20"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.50"
+                    android:id="@+id/img_motivation"
+                    android:src="@drawable/motivation"
+                    app:riv_corner_radius="25dp"
+                    app:riv_border_width="2dp"
+                    app:riv_border_color="#333333"
+                    app:riv_mutate_background="true"
+                    />
+                <TextView
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="انگیزش"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.20"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp">
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.50"
+                    android:id="@+id/img_download"
+                    android:src="@drawable/download"
+                    app:riv_corner_radius="25dp"
+                    app:riv_border_width="2dp"
+                    app:riv_border_color="#333333"
+                    app:riv_mutate_background="true"
+                    />
+                <TextView
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="دانلود منیجر"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.20"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintGuide_percent="0.55" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewDateList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <FrameLayout
+        android:id="@+id/progressBarHolder"
+        android:animateLayoutChanges="true"
+        android:visibility="gone"
+        android:alpha="0.4"
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:layout_gravity="center" />
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>
