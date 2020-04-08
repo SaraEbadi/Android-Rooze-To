@@ -27,19 +27,19 @@
             android:enabled="true"
             android:exported="true" />
         <receiver
-            android:name=".MorningAlarmReceiver"
+            android:name=".features.morningalarm.MorningAlarmReceiver"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".AlarmActivity" />
+        <activity android:name=".features.Alarm.AlarmActivity" />
         <activity android:name=".MedicineActivity" />
-        <activity android:name=".MorningActivity" />
-        <activity android:name=".DownloadActivity"
+        <activity android:name=".features.morningalarm.MorningActivity" />
+        <activity android:name=".features.downloader.DownloadActivity"
             android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".MotivationActivity" />
-        <activity android:name=".EditTaskActivity" />
+        <activity android:name=".features.motivation.MotivationActivity" />
+        <activity android:name=".features.edittask.EditTaskActivity" />
         <activity
-            android:name=".TaskListActivity"
+            android:name=".features.tasklist.TaskListActivity"
             android:launchMode="singleTask" />
         <activity android:name=".AddTaskActivity" />
         <activity android:name=".MainActivity">
@@ -60,7 +60,7 @@
             android:name=".TeaSoundService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <service android:name=".MorningService" />
+        <service android:name=".features.morningalarm.MorningService" />
     </application>
 
 </manifest>

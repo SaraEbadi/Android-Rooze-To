@@ -1,4 +1,4 @@
-package com.saraebadi.github.roozeto.adapter;
+package com.saraebadi.github.roozeto.features.downloader.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

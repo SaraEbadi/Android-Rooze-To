@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_tasklist_activity"
-    tools:context=".AlarmActivity"
+    tools:context=".features.Alarm.AlarmActivity"
     android:layoutDirection="rtl">
 
 

@@ -1,4 +1,4 @@
-package com.saraebadi.github.roozeto;
+package com.saraebadi.github.roozeto.features.tasklist;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,11 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.saraebadi.github.roozeto.adapter.TaskListAdapter;
+import com.saraebadi.github.roozeto.AddTaskActivity;
+import com.saraebadi.github.roozeto.features.edittask.EditTaskActivity;
+import com.saraebadi.github.roozeto.OnClickItemListener;
+import com.saraebadi.github.roozeto.R;
+import com.saraebadi.github.roozeto.features.tasklist.adapter.TaskListAdapter;
 import com.saraebadi.github.roozeto.database.DataSource;
 import com.saraebadi.github.roozeto.model.Task;
 
@@ -58,7 +62,7 @@ public class TaskListActivity extends AppCompatActivity {
         btnAddTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(TaskListActivity.this,AddTaskActivity.class);
+                Intent intent1 = new Intent(TaskListActivity.this, AddTaskActivity.class);
                 intent1.putExtra("date",date);
                 startActivity(intent1);
             }

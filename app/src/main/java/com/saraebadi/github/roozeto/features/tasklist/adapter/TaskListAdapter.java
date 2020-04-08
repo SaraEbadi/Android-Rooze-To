@@ -1,7 +1,6 @@
-package com.saraebadi.github.roozeto.adapter;
+package com.saraebadi.github.roozeto.features.tasklist.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -11,9 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
-import com.saraebadi.github.roozeto.EditTaskActivity;
 import com.saraebadi.github.roozeto.OnClickItemListener;
 import com.saraebadi.github.roozeto.R;
 import com.saraebadi.github.roozeto.database.DataSource;

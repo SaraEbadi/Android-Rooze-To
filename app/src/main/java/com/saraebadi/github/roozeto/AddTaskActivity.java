@@ -10,6 +10,7 @@ import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
 import com.saraebadi.github.roozeto.database.DataSource;
+import com.saraebadi.github.roozeto.features.tasklist.TaskListActivity;
 import com.saraebadi.github.roozeto.model.Task;
 
 public class AddTaskActivity extends AppCompatActivity {
@@ -56,7 +57,7 @@ public class AddTaskActivity extends AppCompatActivity {
                 }else {
                     Task task = new Task(titleTask,stringTask,0,date);
                     taskDataSource.addTask(task);
-                    Intent intent = new Intent(AddTaskActivity.this,TaskListActivity.class);
+                    Intent intent = new Intent(AddTaskActivity.this, TaskListActivity.class);
                     intent.putExtra("date",date);
                     startActivity(intent);
                     finish();

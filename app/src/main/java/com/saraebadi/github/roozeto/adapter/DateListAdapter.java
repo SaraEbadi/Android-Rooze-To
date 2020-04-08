@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.saraebadi.github.roozeto.R;
-import com.saraebadi.github.roozeto.TaskListActivity;
+import com.saraebadi.github.roozeto.features.tasklist.TaskListActivity;
 
 import java.util.List;
 

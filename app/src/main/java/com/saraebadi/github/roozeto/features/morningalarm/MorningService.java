@@ -1,4 +1,4 @@
-package com.saraebadi.github.roozeto;
+package com.saraebadi.github.roozeto.features.morningalarm;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
+
+import com.saraebadi.github.roozeto.R;
+import com.saraebadi.github.roozeto.features.Alarm.AlarmActivity;
 
 import static com.saraebadi.github.roozeto.Configuration.CHANNEL_ID;
 
@@ -20,7 +23,7 @@ public class MorningService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.mornning_alarm);
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.mornning_alarm);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
 

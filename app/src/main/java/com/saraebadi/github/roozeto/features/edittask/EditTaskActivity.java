@@ -1,4 +1,4 @@
-package com.saraebadi.github.roozeto;
+package com.saraebadi.github.roozeto.features.edittask;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -12,7 +12,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.saraebadi.github.roozeto.R;
 import com.saraebadi.github.roozeto.database.DataSource;
+import com.saraebadi.github.roozeto.features.tasklist.TaskListActivity;
 import com.saraebadi.github.roozeto.model.Task;
 
 public class EditTaskActivity extends AppCompatActivity {

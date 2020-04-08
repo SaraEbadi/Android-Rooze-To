@@ -1,4 +1,4 @@
-package com.saraebadi.github.roozeto;
+package com.saraebadi.github.roozeto.features.downloader;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -23,7 +23,8 @@ import com.downloader.Error;
 import com.downloader.OnDownloadListener;
 import com.downloader.OnStartOrResumeListener;
 import com.downloader.PRDownloader;
-import com.saraebadi.github.roozeto.adapter.DownloadListAdapter;
+import com.saraebadi.github.roozeto.R;
+import com.saraebadi.github.roozeto.features.downloader.adapter.DownloadListAdapter;
 import com.saraebadi.github.roozeto.database.DataSource;
 import com.saraebadi.github.roozeto.model.Download;
 import java.io.File;

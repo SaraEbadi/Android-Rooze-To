@@ -23,6 +23,9 @@ import com.daimajia.androidanimations.library.YoYo;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.saraebadi.github.roozeto.adapter.DateListAdapter;
 import com.saraebadi.github.roozeto.database.DataSource;
+import com.saraebadi.github.roozeto.features.downloader.DownloadActivity;
+import com.saraebadi.github.roozeto.features.morningalarm.MorningActivity;
+import com.saraebadi.github.roozeto.features.motivation.MotivationActivity;
 import com.saraebadi.github.roozeto.lib.Roozh;
 
 import java.text.ParseException;
@@ -141,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
         imgAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentMorninActivity = new Intent(MainActivity.this,MorningActivity.class);
+                Intent intentMorninActivity = new Intent(MainActivity.this, MorningActivity.class);
                 startActivity(intentMorninActivity);
             }
         });
@@ -149,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         imgMotivation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentMotivationActivity = new Intent(MainActivity.this,MotivationActivity.class);
+                Intent intentMotivationActivity = new Intent(MainActivity.this, MotivationActivity.class);
                 startActivity(intentMotivationActivity);
             }
         });
@@ -157,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         imgDownload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentDownloadManager = new Intent(MainActivity.this,DownloadActivity.class);
+                Intent intentDownloadManager = new Intent(MainActivity.this, DownloadActivity.class);
                 startActivity(intentDownloadManager);
             }
         });

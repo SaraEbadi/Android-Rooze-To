@@ -1,4 +1,4 @@
-package com.saraebadi.github.roozeto;
+package com.saraebadi.github.roozeto.features.morningalarm;
 
 import android.annotation.TargetApi;
 import android.app.AlarmManager;
@@ -6,12 +6,13 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TimePicker;
+
+import com.saraebadi.github.roozeto.MainActivity;
+import com.saraebadi.github.roozeto.R;
 
 import java.util.Calendar;
 
@@ -52,11 +53,11 @@ public class MorningActivity extends AppCompatActivity {
 
 
 
-                Intent intentAlarmBroadCastReciver = new Intent(MorningActivity.this,MorningAlarmReceiver.class);
+                Intent intentAlarmBroadCastReciver = new Intent(MorningActivity.this, MorningAlarmReceiver.class);
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(MorningActivity.this,0,intentAlarmBroadCastReciver,PendingIntent.FLAG_UPDATE_CURRENT);
                 alarmManager.set(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);
 
-                Intent intent = new Intent(MorningActivity.this,MainActivity.class);
+                Intent intent = new Intent(MorningActivity.this, MainActivity.class);
                 startActivity(intent);
 
 

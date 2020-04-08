@@ -1,4 +1,4 @@
-package com.saraebadi.github.roozeto;
+package com.saraebadi.github.roozeto.features.Alarm;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.saraebadi.github.roozeto.features.morningalarm.MorningService;
+import com.saraebadi.github.roozeto.R;
 
 import java.util.Random;
 
