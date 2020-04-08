@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.saraebadi.github.roozeto.AddTaskActivity;
+import com.saraebadi.github.roozeto.features.addtask.AddTaskActivity;
 import com.saraebadi.github.roozeto.features.edittask.EditTaskActivity;
 import com.saraebadi.github.roozeto.OnClickItemListener;
 import com.saraebadi.github.roozeto.R;

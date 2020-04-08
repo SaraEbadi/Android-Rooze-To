@@ -46,14 +46,12 @@ public class MainActivity extends AppCompatActivity {
     RoundedImageView imgTea;
     RoundedImageView imgAlarm;
     RoundedImageView imgDownload;
-    RoundedImageView imgMedecine;
+    RoundedImageView imgMedicine;
     Calendar calendar;
     AlarmManager alarmManager;
     AlphaAnimation inAnimation;
     AlphaAnimation outAnimation;
     FrameLayout progressBarHolder;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,27 +59,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolbarMainActivity = findViewById(R.id.toolbar_main_activity);
         setSupportActionBar(toolbarMainActivity);
-
         imgMotivation = findViewById(R.id.img_motivation);
         imgCoffee = findViewById(R.id.img_coffee);
         imgTea = findViewById(R.id.img_tea);
         imgDownload = findViewById(R.id.img_download);
         imgAlarm = findViewById(R.id.img_sleep);
-        imgMedecine= findViewById(R.id.img_medicine);
+        imgMedicine = findViewById(R.id.img_medicine);
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         progressBarHolder = findViewById(R.id.progressBarHolder);
-
-
-
-
             imgCoffee.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     if (isServiceRunning(CoffeeSoundService.class)){
                         Toast.makeText(MainActivity.this, "آلارم قهوه در حال حاضر فعال است", Toast.LENGTH_SHORT).show();
                         Toast.makeText(MainActivity.this, "منتظر بمانید ...", Toast.LENGTH_SHORT).show();
-
                     }else {
                         calendar = Calendar.getInstance();
                         YoYo.with(Techniques.Pulse)
@@ -92,29 +83,25 @@ public class MainActivity extends AppCompatActivity {
                         int hour = calendar.get(calendar.HOUR_OF_DAY);
                         calendar.set(Calendar.HOUR_OF_DAY, hour);
                         calendar.set(Calendar.MINUTE, minute);
-                        final Intent alarmReceiverIntent = new Intent(MainActivity.this, CoffeeSoundReceiver.class);
-                        PendingIntent pendingIntent1 = PendingIntent.getBroadcast(MainActivity.this, 0, alarmReceiverIntent, PendingIntent.FLAG_ONE_SHOT);
+                        final Intent alarmReceiverIntent = new Intent(
+                                MainActivity.this, CoffeeSoundReceiver.class);
+                        PendingIntent pendingIntent1 = PendingIntent.getBroadcast(
+                                MainActivity.this, 0, alarmReceiverIntent, PendingIntent.FLAG_ONE_SHOT);
                         alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent1);
                         new TaskCoffee().execute();
                         Toast.makeText(MainActivity.this, "آلارم قهوه تون فعال شد", Toast.LENGTH_LONG).show();
-
                     }
-
                     }
 
 
 
             });
-
-
         imgTea.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (isServiceRunning(TeaSoundService.class)){
                     Toast.makeText(MainActivity.this, "آلارم چایی در حال حاضر فعال است", Toast.LENGTH_SHORT).show();
                     Toast.makeText(MainActivity.this, "منتظر بمانید ...", Toast.LENGTH_SHORT).show();
-
                 }else {
                     YoYo.with(Techniques.Pulse)
                             .duration(500)
@@ -130,16 +117,9 @@ public class MainActivity extends AppCompatActivity {
                     alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
                     new TaskTea().execute();
                     Toast.makeText(MainActivity.this, "آلارم چایی فعال شد", Toast.LENGTH_LONG).show();
-
-
-
                 }
-
-
             }
         });
-
-
 
         imgAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -165,26 +145,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        imgMedecine.setOnClickListener(new View.OnClickListener() {
+        imgMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "این آیتم در دست تعمیر است", Toast.LENGTH_SHORT).show();
             }
         });
 
-
         dataSource = new DataSource(this);
         dataSource.open();
         toolbarMainActivity = findViewById(R.id.toolbar_main_activity);
         setSupportActionBar(toolbarMainActivity);
-
         dateRecyclerView = findViewById(R.id.recyclerViewDateList);
         DateListAdapter dateListAdapter = new DateListAdapter(MainActivity.this,getDaysList(4));
         dateRecyclerView.setAdapter(dateListAdapter);
         dateRecyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
     }
-
 
     //create and inflate menu on activity
     @Override
@@ -192,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main_toolbar,menu);
         return true;
     }
-
 
     //onclick item menu action
     @Override
@@ -234,13 +209,9 @@ public class MainActivity extends AppCompatActivity {
             String roozhToday = getDayPersianString(calendar) + " " +roozh.toString();
             dateList.add(roozhToday);
             calendar.add(Calendar.DATE,1);
-
         }
         return dateList;
-
     }
-
-
 
     public String getDateMarked(String fromDate, String toDate){//21/12/2121
         SimpleDateFormat simpleDate = new SimpleDateFormat("dd/MM/yyyy");
@@ -261,7 +232,6 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
-
     //.................get current date week name
     public String getDayPersianString (Calendar calendar){
         int day = calendar.get(Calendar.DAY_OF_WEEK);
@@ -280,11 +250,9 @@ public class MainActivity extends AppCompatActivity {
                 return "پنج شنبه";
             case Calendar.FRIDAY:
                 return "جمعه";
-
         }
         return null;
     }
-
 
     private boolean isServiceRunning(Class<?> serviceClass) {
         ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
@@ -292,20 +260,15 @@ public class MainActivity extends AppCompatActivity {
             if(serviceClass.getName().equals(service.service.getClassName())) {
                 Log.i("service", "isServiceRunning: "+ serviceClass.getName().equals(service.service.getClassName()));
                     return true;
-
             }
         }
         return false;
     }
 
-
     private class TaskCoffee extends AsyncTask <Void, Void, Void> {
-
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
             imgCoffee.setEnabled(false);
             inAnimation = new AlphaAnimation(0f, 1f);
             inAnimation.setDuration(200);
@@ -323,7 +286,6 @@ public class MainActivity extends AppCompatActivity {
             imgCoffee.setEnabled(true);
         }
 
-
         @Override
         protected Void doInBackground(Void... params) {
             try {
@@ -331,23 +293,17 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("progressbar", "Emulating some task.. Step " + i);
                     TimeUnit.SECONDS.sleep(1);
                 }
-
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
             return null;
         }
     }
 
-
     private class TaskTea extends AsyncTask <Void, Void, Void> {
-
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
             imgTea.setEnabled(false);
             inAnimation = new AlphaAnimation(0f, 1f);
             inAnimation.setDuration(200);
@@ -365,7 +321,6 @@ public class MainActivity extends AppCompatActivity {
             imgTea.setEnabled(true);
         }
 
-
         @Override
         protected Void doInBackground(Void... params) {
             try {
@@ -373,16 +328,10 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("progressbar", "Emulating some task.. Step " + i);
                     TimeUnit.SECONDS.sleep(1);
                 }
-
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
             return null;
         }
     }
-
-
-
-
 }

@@ -1,4 +1,4 @@
-package com.saraebadi.github.roozeto;
+package com.saraebadi.github.roozeto.features.addtask;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
+import com.saraebadi.github.roozeto.R;
 import com.saraebadi.github.roozeto.database.DataSource;
 import com.saraebadi.github.roozeto.features.tasklist.TaskListActivity;
 import com.saraebadi.github.roozeto.model.Task;

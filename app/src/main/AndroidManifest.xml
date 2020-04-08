@@ -41,7 +41,7 @@
         <activity
             android:name=".features.tasklist.TaskListActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".AddTaskActivity" />
+        <activity android:name=".features.addtask.AddTaskActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

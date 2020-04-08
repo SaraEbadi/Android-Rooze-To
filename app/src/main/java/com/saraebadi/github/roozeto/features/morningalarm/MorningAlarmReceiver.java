@@ -10,11 +10,11 @@ import com.saraebadi.github.roozeto.features.morningalarm.MorningService;
 public class MorningAlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        Intent intentReciver = new Intent(context, MorningService.class);
+        Intent intentReceiver = new Intent(context, MorningService.class);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            context.startForegroundService(intentReciver);
+            context.startForegroundService(intentReceiver);
         }else {
-            context.startService(intentReciver);
+            context.startService(intentReceiver);
         }
     }
 }

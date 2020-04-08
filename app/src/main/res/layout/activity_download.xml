@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient_download_activity"
-    tools:context=".features.downloader.DownloadActivity"
-    >
+    tools:context=".features.downloader.DownloadActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_download_activity"
@@ -50,10 +49,7 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/edt_url"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/edt_url">
-
-
-    </ImageView>
+        app:layout_constraintTop_toTopOf="@+id/edt_url"/>
 
     <ProgressBar
         android:id="@+id/progressBar"

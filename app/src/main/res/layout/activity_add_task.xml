@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#424242"
-    tools:context=".AddTaskActivity"
+    tools:context=".features.addtask.AddTaskActivity"
     android:textDirection="rtl"
     android:layoutDirection="rtl">
 
@@ -21,7 +21,6 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
     </android.support.v7.widget.Toolbar>
-
 
     <EditText
         android:id="@+id/edtEditTitleTask"
