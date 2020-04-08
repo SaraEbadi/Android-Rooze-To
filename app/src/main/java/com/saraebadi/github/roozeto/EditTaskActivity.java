@@ -1,16 +1,16 @@
 package com.saraebadi.github.roozeto;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.support.v7.widget.Toolbar;
 
 import com.saraebadi.github.roozeto.database.DataSource;
 import com.saraebadi.github.roozeto.model.Task;
@@ -23,6 +23,7 @@ public class EditTaskActivity extends AppCompatActivity {
     DataSource dataSource;
     Task task;
     Toolbar toolbarEditTaskActivity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,12 +42,11 @@ public class EditTaskActivity extends AppCompatActivity {
 
 
         final Intent intent = getIntent();
-        int taskId = intent.getIntExtra("taskId",1);
+        int taskId = intent.getIntExtra("taskId", 1);
 
         dataSource = new DataSource(this);
         dataSource.open();
-         task = dataSource.getTaskSpecificId(taskId);
-
+        task = dataSource.getTaskSpecificId(taskId);
 
         edtEditTitleTask.setText(task.getTaskTitle());
         edtEditStringTask.setText(task.getTaskString());
@@ -57,12 +57,10 @@ public class EditTaskActivity extends AppCompatActivity {
                 task.setTaskTitle(edtEditTitleTask.getText().toString());
                 task.setTaskString(edtEditStringTask.getText().toString());
                 dataSource.updateTask(task);
-                Intent intent1 =new Intent(EditTaskActivity.this,TaskListActivity.class);
-                intent1.putExtra("date",task.getTaskDate());
+                Intent intent1 = new Intent(EditTaskActivity.this, TaskListActivity.class);
+                intent1.putExtra("date", task.getTaskDate());
                 startActivity(intent1);
                 finish();
-
-
             }
         });
 
@@ -77,8 +75,8 @@ public class EditTaskActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                         dataSource.deleteTask(task);
-                        Intent deleteIntent = new Intent(EditTaskActivity.this,TaskListActivity.class);
-                        deleteIntent.putExtra("date",task.getTaskDate());
+                        Intent deleteIntent = new Intent(EditTaskActivity.this, TaskListActivity.class);
+                        deleteIntent.putExtra("date", task.getTaskDate());
                         startActivity(deleteIntent);
                         finish();
                     }
@@ -93,8 +91,6 @@ public class EditTaskActivity extends AppCompatActivity {
                 alert.show();
             }
         });
-
-
     }
 
     @Override

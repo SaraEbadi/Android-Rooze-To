@@ -25,7 +25,7 @@ public class MorningService extends Service {
         mediaPlayer.start();
 
 
-        Intent intentAlarm = new Intent(this,AlaramActivity.class);
+        Intent intentAlarm = new Intent(this, AlarmActivity.class);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intentAlarm,0);
 

@@ -18,14 +18,14 @@ public class AddTaskActivity extends AppCompatActivity {
     EditText stringTaskEdt;
     Button addTaskBtn;
     DataSource taskDataSource;
-    Toolbar toolbatAddTaskActivity;
+    Toolbar toolbarAddTaskActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
-        toolbatAddTaskActivity = findViewById(R.id.toolbar_add_task_activity);
-        setSupportActionBar(toolbatAddTaskActivity);
+        toolbarAddTaskActivity = findViewById(R.id.toolbar_add_task_activity);
+        setSupportActionBar(toolbarAddTaskActivity);
         getSupportActionBar().setTitle(" تسک جدید ");
 
 

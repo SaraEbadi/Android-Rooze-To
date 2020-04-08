@@ -9,7 +9,6 @@ import android.os.Build;
 import com.downloader.PRDownloader;
 
 public class Configuration extends Application {
-
     public static final String CHANNEL_ID ="notificationServiceChannel";
 
     @Override

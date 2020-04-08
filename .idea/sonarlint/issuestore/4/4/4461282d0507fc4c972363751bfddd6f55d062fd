@@ -1,23 +1,23 @@
 
-k	java:S117$"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¦îÿşÿÿÿÿ
-k	java:S117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀëµÎıÿÿÿÿ
-l	java:S117‘"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀëµÎıÿÿÿÿ
-R
-java:S2589~"7Remove this expression which always evaluates to "true"(ñüùÚøÿÿÿÿ
-S
-java:S2589Ç"7Remove this expression which always evaluates to "true"(ñüùÚøÿÿÿÿ
-S
-java:S2589˜"7Remove this expression which always evaluates to "true"(ñüùÚøÿÿÿÿ
-R
-java:S2589T"7Remove this expression which always evaluates to "true"(ñüùÚøÿÿÿÿ
+W	java:S125‰"<This block of commented-out lines of code should be removed.(„×¦»úÿÿÿÿ
 R
 java:S2589k"7Remove this expression which always evaluates to "true"(ñüùÚøÿÿÿÿ
 \
 java:S1126%"AReplace this if-then-else statement by a single return statement.(·ÚÃÏıÿÿÿÿ
+R
+java:S2589T"7Remove this expression which always evaluates to "true"(ñüùÚøÿÿÿÿ
 W
 java:S11260"AReplace this if-then-else statement by a single return statement.(œµ€
+k	java:S117$"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¦îÿşÿÿÿÿ
+k	java:S117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀëµÎıÿÿÿÿ
+R
+java:S2589~"7Remove this expression which always evaluates to "true"(ñüùÚøÿÿÿÿ
 W
 java:S1126;"AReplace this if-then-else statement by a single return statement.(œµ€
 e
 java:S3027d"JPut single-quotes around '/' to use the faster "lastIndexOf(char)" method.(‡¼·úÿÿÿÿ
-W	java:S125‰"<This block of commented-out lines of code should be removed.(„×¦»úÿÿÿÿ
+S
+java:S2589Ç"7Remove this expression which always evaluates to "true"(ñüùÚøÿÿÿÿ
+S
+java:S2589˜"7Remove this expression which always evaluates to "true"(ñüùÚøÿÿÿÿ
+l	java:S117‘"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀëµÎıÿÿÿÿ

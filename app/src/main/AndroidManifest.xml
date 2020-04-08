@@ -31,7 +31,7 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".AlaramActivity" />
+        <activity android:name=".AlarmActivity" />
         <activity android:name=".MedicineActivity" />
         <activity android:name=".MorningActivity" />
         <activity android:name=".DownloadActivity"
