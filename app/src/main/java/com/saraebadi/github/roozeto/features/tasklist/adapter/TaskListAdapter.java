@@ -73,9 +73,9 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.TaskVi
 
         public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtTitle = itemView.findViewById(R.id.textViewTitle);
+            txtTitle = itemView.findViewById(R.id.txtTitle);
             imgIsDone = itemView.findViewById(R.id.imgIsDone);
-            item = itemView.findViewById(R.id.cardviewItem);
+            item = itemView.findViewById(R.id.cvItem);
 
             imgIsDone.setOnClickListener(this);
             item.setOnClickListener(this);

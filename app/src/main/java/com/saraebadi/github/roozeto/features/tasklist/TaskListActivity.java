@@ -43,7 +43,7 @@ public class TaskListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task_list);
         recyclerViewTaskList=findViewById(R.id.recyclerviewTaskList);
         btnAddTask = findViewById(R.id.btnAddTask);
-        itemView = findViewById(R.id.cardviewItem);
+        itemView = findViewById(R.id.cvItem);
         imgIsDone = findViewById(R.id.imgIsDone);
         toolbar = findViewById(R.id.toolbar_task_list_activity);
         setSupportActionBar(toolbar);
@@ -87,7 +87,7 @@ public class TaskListActivity extends AppCompatActivity {
                     taskListAdapter.notifyDataSetChanged();
                     break;
 
-                case R.id.cardviewItem :
+                case R.id.cvItem:
                     Intent intent = new Intent(TaskListActivity.this, EditTaskActivity.class);
                     intent.putExtra("taskId",taskList.get(position).getTaskID());
                     startActivity(intent);

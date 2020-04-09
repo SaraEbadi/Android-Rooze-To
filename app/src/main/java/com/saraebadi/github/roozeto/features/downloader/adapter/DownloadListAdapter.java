@@ -53,7 +53,7 @@ public class DownloadListAdapter extends RecyclerView.Adapter<DownloadListAdapte
         ImageView imgComplete;
         public downloadViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtUrl = itemView.findViewById(R.id.txt_url);
+            txtUrl = itemView.findViewById(R.id.txtUrl);
             imgComplete = itemView.findViewById(R.id.img_complete);
 
         }

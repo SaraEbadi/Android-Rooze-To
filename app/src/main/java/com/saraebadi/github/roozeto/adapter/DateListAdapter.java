@@ -51,8 +51,8 @@ public class DateListAdapter extends RecyclerView.Adapter<DateListAdapter.DateVi
         CardView cardViewDate;
         public DateViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewDate= itemView.findViewById(R.id.textViewDate);
-            cardViewDate = itemView.findViewById(R.id.cardViewDate);
+            textViewDate= itemView.findViewById(R.id.txtDate);
+            cardViewDate = itemView.findViewById(R.id.cvDate);
         }
 
         public void setOnClickListener (){
@@ -62,7 +62,7 @@ public class DateListAdapter extends RecyclerView.Adapter<DateListAdapter.DateVi
         @Override
         public void onClick(View v) {
             switch (v.getId()){
-                case R.id.cardViewDate :
+                case R.id.cvDate:
                 Intent intentAddTask = new Intent(context, TaskListActivity.class);
                 intentAddTask.putExtra("date",dateList.get(getAdapterPosition()));
                 context.startActivity(intentAddTask);
