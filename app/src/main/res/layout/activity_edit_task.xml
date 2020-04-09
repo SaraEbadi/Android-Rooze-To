@@ -10,8 +10,8 @@
     android:layoutDirection="rtl">
 
     <android.support.v7.widget.Toolbar
-        android:layoutDirection="rtl"
         android:id="@+id/toolbar_edi_task_activity"
+        android:layoutDirection="rtl"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"

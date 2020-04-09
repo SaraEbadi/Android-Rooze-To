@@ -28,7 +28,7 @@ public class MotivationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motivation);
 
-        toolbarMotivationActivity = findViewById(R.id.toolbar_motivation_activity);
+        toolbarMotivationActivity = findViewById(R.id.toolbarMotivation);
         setSupportActionBar(toolbarMotivationActivity);
         getSupportActionBar().setTitle("ویدئو انگیزشی");
 
@@ -65,7 +65,7 @@ public class MotivationActivity extends AppCompatActivity {
     //playing video on screen device
     public void setUpMediaPlayer(){
         MediaController mc = new MediaController(this);
-        videoView = findViewById(R.id.video_view);
+        videoView = findViewById(R.id.videoView);
         videoView.setMediaController(mc);
         Uri uri = Uri.parse(videoUrl);
         videoView.setVideoURI(uri);

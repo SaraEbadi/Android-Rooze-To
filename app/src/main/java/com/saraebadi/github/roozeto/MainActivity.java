@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        toolbarMainActivity = findViewById(R.id.toolbar_main_activity);
+        toolbarMainActivity = findViewById(R.id.toolbarMain);
         setSupportActionBar(toolbarMainActivity);
         imgMotivation = findViewById(R.id.img_motivation);
         imgCoffee = findViewById(R.id.img_coffee);
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
         dataSource = new DataSource(this);
         dataSource.open();
-        toolbarMainActivity = findViewById(R.id.toolbar_main_activity);
+        toolbarMainActivity = findViewById(R.id.toolbarMain);
         setSupportActionBar(toolbarMainActivity);
         dateRecyclerView = findViewById(R.id.recyclerViewDateList);
         DateListAdapter dateListAdapter = new DateListAdapter(MainActivity.this,getDaysList(4));

@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".features.morningalarm.MorningActivity">
+
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_morning_activity"
+        android:id="@+id/toolbarMorning"
         android:layoutDirection="rtl"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
@@ -17,23 +18,24 @@
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <TimePicker
-        android:id="@+id/time_picker"
+        android:id="@+id/timePicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_morning_activity"></TimePicker>
+        app:layout_constraintTop_toBottomOf="@+id/toolbarMorning"/>
 
     <Button
-        android:id="@+id/btn_start_alarm"
+        android:id="@+id/btnStartAlarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/background_button_alarm"
-        android:text="فعال سازی آلارم"
+        tools:text="فعال سازی آلارم"
         android:textColor="@color/colorWhite"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time_picker" />
+        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
+
 </android.support.constraint.ConstraintLayout>

@@ -31,8 +31,8 @@ public class MorningActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_morning);
-        timePicker = findViewById(R.id.time_picker);
-        btnStartAlarm = findViewById(R.id.btn_start_alarm);
+        timePicker = findViewById(R.id.timePicker);
+        btnStartAlarm = findViewById(R.id.btnStartAlarm);
         calendar = Calendar.getInstance();
 
 

@@ -41,11 +41,11 @@ public class TaskListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_list);
-        recyclerViewTaskList=findViewById(R.id.recyclerviewTaskList);
+        recyclerViewTaskList=findViewById(R.id.recTaskList);
         btnAddTask = findViewById(R.id.btnAddTask);
         itemView = findViewById(R.id.cvItem);
         imgIsDone = findViewById(R.id.imgIsDone);
-        toolbar = findViewById(R.id.toolbar_task_list_activity);
+        toolbar = findViewById(R.id.toolbarTaskList);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("لیست تسک ها");
         dataSource = new DataSource(this);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_tasklist_activity"
+    android:background="@drawable/shape_background_task_list"
     tools:context=".features.Alarm.AlarmActivity"
     android:layoutDirection="rtl">
 
