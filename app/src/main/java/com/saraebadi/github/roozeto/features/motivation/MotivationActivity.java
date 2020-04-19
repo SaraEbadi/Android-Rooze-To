@@ -39,23 +39,25 @@ public class MotivationActivity extends AppCompatActivity {
             return;
         }
         checkNetworkInfo();
+        initializePlayer();
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        initializePlayer();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        videoCurrentPosition = videoView.getCurrentPosition();
+
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        videoCurrentPosition = videoView.getCurrentPosition();
     }
 
     @Override
@@ -84,6 +86,7 @@ public class MotivationActivity extends AppCompatActivity {
         videoView.setVideoURI(uri);
         videoView.requestFocus();
         videoView.start();
+        stopProgressbar();
     }
 
     private void releasePlayer() {
@@ -94,8 +97,6 @@ public class MotivationActivity extends AppCompatActivity {
         videoView.setOnPreparedListener(e -> prgMotivation.setVisibility(View.GONE));
     }
 
-
-    //fill video url with random url and low quality Url
     private void fillLowQuality() {
         videoList.add("https://hw13.cdn.asset.aparat.com/aparat-video/dc191ced3f723a7d151a8680df119b1d15747708-144p__19845.mp4");
         videoList.add("https://hw13.cdn.asset.aparat.com/aparat-video/71c6cc1b13fb9949ee681bfe191aec7215714896-144p__93256.mp4");
@@ -110,7 +111,6 @@ public class MotivationActivity extends AppCompatActivity {
         videoUrl = videoList.get(new Random().nextInt(videoList.size()));
     }
 
-    //fill video url with random url and High quality Url
     private void fillHighQuality() {
         videoList.add("https://hw13.cdn.asset.aparat.com/aparat-video/dc191ced3f723a7d151a8680df119b1d15747708-720p__19845.mp4");
         videoList.add("https://hw13.cdn.asset.aparat.com/aparat-video/71c6cc1b13fb9949ee681bfe191aec7215714896-720p__93256.mp4");

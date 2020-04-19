@@ -19,3 +19,11 @@ t
 Dapp/src/main/java/com/saraebadi/github/roozeto/TeaSoundReceiver.java,6\9\693345fbfcfc0664d8a4767ec3662eb48957d03c
 s
 Capp/src/main/java/com/saraebadi/github/roozeto/TeaSoundService.java,8\8\88191a3cf082348428927a12e8851b5fd246cbb4
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+Š
+Zapp/src/main/java/com/saraebadi/github/roozeto/features/motivation/MotivationActivity.java,7\0\70a1884cd465430dfeeefe56e0a94a438187ff9f
