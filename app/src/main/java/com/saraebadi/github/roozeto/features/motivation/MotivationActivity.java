@@ -7,63 +7,76 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.MediaController;
+import android.widget.ProgressBar;
 import android.widget.VideoView;
-
 import com.saraebadi.github.roozeto.R;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class MotivationActivity extends AppCompatActivity {
-    VideoView videoView;
-    Toolbar toolbarMotivationActivity;
-    List<String> videoList = new ArrayList<>();
-    String videoUrl;
-    int videoCurrentPosition;
+    private VideoView videoView;
+    private List<String> videoList = new ArrayList<>();
+    private String videoUrl;
+    private int videoCurrentPosition;
+    private ProgressBar prgMotivation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motivation);
-
-        toolbarMotivationActivity = findViewById(R.id.toolbarMotivation);
+        Toolbar toolbarMotivationActivity = findViewById(R.id.toolbarMotivation);
+        prgMotivation = findViewById(R.id.prgMotivation);
         setSupportActionBar(toolbarMotivationActivity);
         getSupportActionBar().setTitle("ویدئو انگیزشی");
-
-
-        if (savedInstanceState != null){
+        if (savedInstanceState != null) {
             int current = savedInstanceState.getInt("videoCurrentPosition");
             videoUrl = savedInstanceState.getString("videoUrl");
-            setUpMediaPlayer();
+            initializePlayer();
             videoView.seekTo(current);
             return;
         }
-
-
-
-
-
         checkNetworkInfo();
-        setUpMediaPlayer();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        initializePlayer();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        videoCurrentPosition = videoView.getCurrentPosition();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("videoCurrentPosition", videoCurrentPosition);
+        outState.putString("videoUrl", videoUrl);
+    }
 
     //check network is wifi or data on device
-    public void checkNetworkInfo(){
-        ConnectivityManager connectivityManager =(ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo  = connectivityManager.getActiveNetworkInfo();
-        if (networkInfo.getType() == ConnectivityManager.TYPE_WIFI){
+    private void checkNetworkInfo() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if (networkInfo.getType() == ConnectivityManager.TYPE_WIFI) {
             fillHighQuality();
-        }else if (networkInfo.getType() == ConnectivityManager.TYPE_MOBILE){
+        } else if (networkInfo.getType() == ConnectivityManager.TYPE_MOBILE) {
             fillLowQuality();
         }
     }
 
-
-    //playing video on screen device
-    public void setUpMediaPlayer(){
+    private void initializePlayer() {
         MediaController mc = new MediaController(this);
         videoView = findViewById(R.id.videoView);
         videoView.setMediaController(mc);
@@ -73,9 +86,17 @@ public class MotivationActivity extends AppCompatActivity {
         videoView.start();
     }
 
+    private void releasePlayer() {
+        videoView.stopPlayback();
+    }
+
+    private void stopProgressbar() {
+        videoView.setOnPreparedListener(e -> prgMotivation.setVisibility(View.GONE));
+    }
+
 
     //fill video url with random url and low quality Url
-    public void fillLowQuality(){
+    private void fillLowQuality() {
         videoList.add("https://hw13.cdn.asset.aparat.com/aparat-video/dc191ced3f723a7d151a8680df119b1d15747708-144p__19845.mp4");
         videoList.add("https://hw13.cdn.asset.aparat.com/aparat-video/71c6cc1b13fb9949ee681bfe191aec7215714896-144p__93256.mp4");
         videoList.add("https://hw15.cdn.asset.aparat.com/aparat-video/30cf882be8efa60754c916d4cd8d5cea15643664-144p__63386.mp4");
@@ -90,7 +111,7 @@ public class MotivationActivity extends AppCompatActivity {
     }
 
     //fill video url with random url and High quality Url
-    public void fillHighQuality(){
+    private void fillHighQuality() {
         videoList.add("https://hw13.cdn.asset.aparat.com/aparat-video/dc191ced3f723a7d151a8680df119b1d15747708-720p__19845.mp4");
         videoList.add("https://hw13.cdn.asset.aparat.com/aparat-video/71c6cc1b13fb9949ee681bfe191aec7215714896-720p__93256.mp4");
         videoList.add("https://hw15.cdn.asset.aparat.com/aparat-video/30cf882be8efa60754c916d4cd8d5cea15643664-720p__63386.mp4");
@@ -103,18 +124,5 @@ public class MotivationActivity extends AppCompatActivity {
         videoUrl = videoList.get(new Random().nextInt(videoList.size()));
     }
 
-    //get second and minutes current video when activity rotate and on pause is run
-    @Override
-    protected void onPause() {
-        super.onPause();
-        videoCurrentPosition = videoView.getCurrentPosition();
-    }
 
-    //save second and minutes current video when activity rotate and save current video url
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putInt("videoCurrentPosition",videoCurrentPosition);
-        outState.putString("videoUrl",videoUrl);
-    }
 }

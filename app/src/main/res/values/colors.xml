@@ -2,14 +2,10 @@
 <resources>
     <color name="colorPrimary">#7B1FA2</color>
     <color name="colorPrimaryDark">#6A1B9A</color>
-    <color name="colorAccent">#263238</color>
+    <color name="colorAccent">#364D7A</color>
     <color name="colorToolbar">#8E24AA</color>
     <color name="colorWhite">#ffff</color>
-    <item name="gnfrBlueColor" type="color">#2A3748</item>
-    <item name="semiTransparentGnfrBlueColor" type="color">#602A3748</item>
-    <integer-array name="androidcolors">
-        <item>@color/gnfrBlueColor</item>
-        <item>@color/semiTransparentGnfrBlueColor</item>
-    </integer-array>
-
+    <color name="BlueColor">#2A3748</color>
+    <color name="colorBtnLawTextMode">#3a404a</color>
+    <color name="colorIconGray">#A39999</color>
 </resources>
