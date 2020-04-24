@@ -32,18 +32,19 @@ public class MotivationActivity extends AppCompatActivity {
         prgMotivation = findViewById(R.id.prgMotivation);
         setSupportActionBar(toolbarMotivationActivity);
         getSupportActionBar().setTitle("ویدئو انگیزشی");
-        if (savedInstanceState != null) {
-            videoView.seekTo(savedInstanceState.getInt(CURRENT_POSITION));
-        }
         checkNetworkInfo();
         initializePlayer();
+        if (savedInstanceState != null) {
+            videoUrl = savedInstanceState.getString("videoUrl");
+            initializePlayer();
+            videoView.seekTo(savedInstanceState.getInt(CURRENT_POSITION));
+        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         videoCurrentPosition = videoView.getCurrentPosition();
-
     }
 
     @Override
@@ -56,7 +57,7 @@ public class MotivationActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("videoCurrentPosition", videoCurrentPosition);
+        outState.putInt(CURRENT_POSITION, videoCurrentPosition);
     }
 
     private void checkNetworkInfo() {
@@ -98,7 +99,6 @@ public class MotivationActivity extends AppCompatActivity {
         videoList.add("https://hw19.cdn.asset.aparat.com/aparat-video/0593bd8cda5a6586fe4b90ed72437f8215668666-144p__33105.mp4");
         videoList.add("https://hw5.cdn.asset.aparat.com/aparat-video/90cd1501cb9c103ae1c062e747848f7715755201-144p__23907.mp4");
         videoList.add("https://hw14.cdn.asset.aparat.com/aparat-video/28dc409d71c8ec3ddb017a71201defd415719087-144p__72526.mp4");
-
         videoUrl = videoList.get(new Random().nextInt(videoList.size()));
     }
 
@@ -114,6 +114,4 @@ public class MotivationActivity extends AppCompatActivity {
         videoList.add("https://hw14.cdn.asset.aparat.com/aparat-video/28dc409d71c8ec3ddb017a71201defd415719087-720p__72526.mp4");
         videoUrl = videoList.get(new Random().nextInt(videoList.size()));
     }
-
-
 }
