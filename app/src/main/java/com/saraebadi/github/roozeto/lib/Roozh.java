@@ -1,8 +1,5 @@
 package com.saraebadi.github.roozeto.lib;
 
-/**
- * Created by amirahmad on 24/12/2017.
- */
 
 public class Roozh {
     private int day, month, year;

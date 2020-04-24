@@ -15,6 +15,7 @@ import com.saraebadi.github.roozeto.R;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import static com.saraebadi.github.roozeto.utils.Constants.CURRENT_POSITION;
 
 public class MotivationActivity extends AppCompatActivity {
     private VideoView videoView;
@@ -32,20 +33,10 @@ public class MotivationActivity extends AppCompatActivity {
         setSupportActionBar(toolbarMotivationActivity);
         getSupportActionBar().setTitle("ویدئو انگیزشی");
         if (savedInstanceState != null) {
-            int current = savedInstanceState.getInt("videoCurrentPosition");
-            videoUrl = savedInstanceState.getString("videoUrl");
-            initializePlayer();
-            videoView.seekTo(current);
-            return;
+            videoView.seekTo(savedInstanceState.getInt(CURRENT_POSITION));
         }
         checkNetworkInfo();
         initializePlayer();
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
     }
 
     @Override
@@ -56,18 +47,18 @@ public class MotivationActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
+    protected void onResume() {
+        super.onResume();
+        videoView.start();
+        videoView.seekTo(videoCurrentPosition);
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt("videoCurrentPosition", videoCurrentPosition);
-        outState.putString("videoUrl", videoUrl);
     }
 
-    //check network is wifi or data on device
     private void checkNetworkInfo() {
         ConnectivityManager connectivityManager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();

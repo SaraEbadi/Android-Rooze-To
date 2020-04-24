@@ -6,13 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".features.motivation.MotivationActivity"
     android:layoutDirection="rtl"
-    android:background="#000000">
+    android:background="@android:color/background_dark">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarMotivation"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#0000"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
