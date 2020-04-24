@@ -32,15 +32,15 @@ public class MotivationActivity extends AppCompatActivity {
         prgMotivation = findViewById(R.id.prgMotivation);
         setSupportActionBar(toolbarMotivationActivity);
         getSupportActionBar().setTitle("ویدئو انگیزشی");
-
-        if (savedInstanceState != null) {
-            videoUrl = savedInstanceState.getString("videoUrl");
-            initializePlayer();
-            videoView.seekTo(savedInstanceState.getInt(CURRENT_POSITION));
-            return;
-        }
         checkNetworkInfo();
         initializePlayer();
+        if (savedInstanceState != null) {
+            int current = savedInstanceState.getInt("videoCurrentPosition");
+            videoUrl = savedInstanceState.getString("videoUrl");
+            initializePlayer();
+            videoView.seekTo(current);
+            return;
+        }
     }
 
     @Override
